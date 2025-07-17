@@ -1,26 +1,38 @@
 import React from "react";
+import { useState, useEffect } from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
 
-//create your first component
 const Home = () => {
-	return (
-		<div className="text-center">
-            
 
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+	const [luz, setLuz] = useState("")
+
+	function luzOn(e) {
+		const color = e.target.id;
+		setLuz(color);
+	}
+
+	useEffect(() => {
+		const colores = ["rojo", "ambar", "verde"];
+		colores.forEach((color) => {
+			const elem = document.getElementById(color);
+			if (elem) {
+				if (color === luz) {
+					elem.classList.add("encendida");
+				} else {
+					elem.classList.remove("encendida");
+				}
+			}
+		});
+	}, [luz]);
+
+	return (
+		<div className="justify-content-center">
+			<div className="poste m-auto"></div>
+			<div className="semaforo justify-content-center m-auto">
+				<div id="rojo" className="m-auto" onClick={luzOn}></div>
+				<div id="ambar" className="m-auto" onClick={luzOn}></div>
+				<div id="verde" className="m-auto" onClick={luzOn}></div>
+			</div>
 		</div>
 	);
 };

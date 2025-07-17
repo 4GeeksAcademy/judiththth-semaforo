@@ -1,11 +1,43 @@
-/* 
+.poste {
+    background-color: black;
+    width: 20px;
+    height: 150px;
+}
 
-    You can write your own styles here...
+.semaforo {
+    background-color: black;
+    border-radius: 5%;
+    width: 150px;
+    height: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+}
 
-*/
+
+#rojo {
+    background-color: red;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+}
+
+#ambar {
+    background-color: orange;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+}
+
+#verde {
+    background-color: green;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+}
+
+.encendida {
+    box-shadow: 0 0 30px 10px white;
+}
